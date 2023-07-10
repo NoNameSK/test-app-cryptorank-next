@@ -1,6 +1,30 @@
-import './globals.css'
+'use client'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
+import styled from 'styled-components';
+import { useRouter } from 'next/router'
+
+const Navigation = styled.header`
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+`
+
+const LinkNavigation = styled(Link)`
+ text-decoration: none;
+  font-size: 24px;
+  color: black;
+
+  &.active {
+    color: blue;
+  }
+`
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +40,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navigation>
+            <LinkNavigation href="/converter">Converter</LinkNavigation>
+            <LinkNavigation href="/cryptocurrencies">Cryptocurrencies</LinkNavigation>
+        </Navigation>
+        {children}
+        </body>
     </html>
   )
 }
