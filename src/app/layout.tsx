@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import styled from 'styled-components';
-import { useRouter } from 'next/router'
 
 const Navigation = styled.header`
   display: flex;

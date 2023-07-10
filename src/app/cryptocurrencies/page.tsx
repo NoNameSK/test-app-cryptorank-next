@@ -6,6 +6,7 @@ import { useNumberFormat } from '@/hooks/useNumberFormat';
 import { useFetcher } from '@/hooks/useFetcher';
 
 import styled from 'styled-components';
+import { token } from '@/data/token';
 
 const Wrapper = styled.div`
     clear: both;
@@ -87,9 +88,9 @@ interface CurrencyData {
 
 const Cryptocurrencies: React.FC = () => {
   const [currencies, setCurrencies] = useState<CurrencyData[]>([])
-  const formatNumber = useNumberFormat(); // Use custom hook
+  const formatNumber = useNumberFormat();
 
-  const { data: listOfCurrencies, isLoading: isLoadingCurrencies } = useFetcher(`https://api.cryptorank.io/v1/currencies?api_key=95d392740f14dbe77294ae764928975d15b2ae7c9fe7df3d727817bffe58`);  // replace with correct API endpoint
+  const { data: listOfCurrencies, isLoading: isLoadingCurrencies } = useFetcher(`https://api.cryptorank.io/v1/currencies?api_key=${token}`);
 
   useEffect(() => {
     if (listOfCurrencies) {
@@ -98,8 +99,6 @@ const Cryptocurrencies: React.FC = () => {
           calculateATH(currency.name).then((athData: any) => ({ ...currency, ...athData[currency.name] }))
         )
       ).then(setCurrencies);
-
-      console.log(listOfCurrencies)
     }
   }, [listOfCurrencies]);
 

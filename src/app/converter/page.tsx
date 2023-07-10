@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useFetcher } from '../../hooks/useFetcher';
 import styled from 'styled-components';
 import SwitchCurrenciesIcon from '@/svgs/switch-currencies-icon';
+import { token } from '@/data/token';
+import { ChangeEvent } from 'react';
 
 const Wrapper = styled.div`
   clear: both;
@@ -162,9 +164,9 @@ const Converter: React.FC = () => {
   const [amount, setAmount] = useState<number>(1);
   const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
 
-  const { data: listOfCurrencies, isLoading: isLoadingCurrencies, isError: isErrorCurrencies } = useFetcher(`https://api.cryptorank.io/v1/currencies?api_key=95d392740f14dbe77294ae764928975d15b2ae7c9fe7df3d727817bffe58`);
-  const { data: dataFirstCurrency, isLoading: isLoadingFirstCurrency, isError: isErrorFirstCurrency } = useFetcher(`https://api.cryptorank.io/v1/currencies/${firstCurrency}?api_key=95d392740f14dbe77294ae764928975d15b2ae7c9fe7df3d727817bffe58`);
-  const { data: dataSecondCurrency, isLoading: isLoadingSecondCurrency, isError: isErrorSecondCurrency } = useFetcher(`https://api.cryptorank.io/v1/currencies/${secondCurrency}?api_key=95d392740f14dbe77294ae764928975d15b2ae7c9fe7df3d727817bffe58`);
+  const { data: listOfCurrencies, isLoading: isLoadingCurrencies, isError: isErrorCurrencies } = useFetcher(`https://api.cryptorank.io/v1/currencies?api_key=${token}`);
+  const { data: dataFirstCurrency, isLoading: isLoadingFirstCurrency, isError: isErrorFirstCurrency } = useFetcher(`https://api.cryptorank.io/v1/currencies/${firstCurrency}?api_key=${token}`);
+  const { data: dataSecondCurrency, isLoading: isLoadingSecondCurrency, isError: isErrorSecondCurrency } = useFetcher(`https://api.cryptorank.io/v1/currencies/${secondCurrency}?api_key=${token}`);
 
   useEffect(() => {
     if (dataFirstCurrency && dataSecondCurrency && listOfCurrencies) {
@@ -173,8 +175,6 @@ const Converter: React.FC = () => {
       const rate = dataFirstCurrency.data.values.USD.price / dataSecondCurrency.data.values.USD.price;
 
       setConvertedAmount(amount * rate);
-
-      console.log(dataFirstCurrency)
     }
   }, [dataFirstCurrency, dataSecondCurrency, amount]);
 
@@ -195,18 +195,18 @@ const Converter: React.FC = () => {
             <AmountBox>
               <AmountLabel>Amount</AmountLabel>
               <AmountWrapper>
-                <AmountInput type="number" value={amount} onChange={(e) => setAmount(parseFloat(e.target.value))} />
+                <AmountInput type="number" value={amount} onChange={(e: ChangeEvent<HTMLInputElement>) => setAmount(parseFloat(e.target.value))} />
               </AmountWrapper>
             </AmountBox>
 
             <SelectWrapper>
-              <SelectContainer value={firstCurrency} onChange={(e) => setFirtsCurrency(e.target.value)}>
+              <SelectContainer value={firstCurrency} onChange={(e: ChangeEvent<HTMLSelectElement>) => setFirtsCurrency(e.target.value)}>
                 {currencies.map((cryptocurrency: Currencies) => {
                   return <option key={cryptocurrency.id} value={cryptocurrency.id}>{cryptocurrency.name}</option>
                 })}
               </SelectContainer>
               <SwitchCurrencuesButton onClick={() => switchCurrencies(firstCurrency, secondCurrency)}><SwitchCurrenciesIcon /></SwitchCurrencuesButton>
-              <SelectContainer value={secondCurrency} onChange={(e) => setSecondCurrency(e.target.value)}>
+              <SelectContainer value={secondCurrency} onChange={(e: ChangeEvent<HTMLSelectElement>) => setSecondCurrency(e.target.value)}>
                 {currencies.map((cryptocurrency: Currencies) => {
                   return <option key={cryptocurrency.id} value={cryptocurrency.id}>{cryptocurrency.name}</option>
                 })}
