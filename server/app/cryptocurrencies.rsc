@@ -1,5 +1,5 @@
 1:HL["/_next/static/css/e27f071dcd00fdfa.css",{"as":"style"}]
-0:["5iZwPrPfKqHmLaUSlgtRp",[[["",{"children":["cryptocurrencies",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e27f071dcd00fdfa.css","precedence":"next"}]],["$L3",null]]]]]
+0:["_h9TBmmvSMXMajGLhsJ0b",[[["",{"children":["cryptocurrencies",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e27f071dcd00fdfa.css","precedence":"next"}]],["$L3",null]]]]]
 4:I{"id":6126,"chunks":["643:static/chunks/643-3021bcccaa59645f.js","114:static/chunks/114-07aa280a34e3704f.js","185:static/chunks/app/layout-da7671f87e64b6f3.js"],"name":"","async":false}
 5:I{"id":9180,"chunks":["272:static/chunks/webpack-5c112b2219820177.js","253:static/chunks/bce60fc1-4b414db556b9a059.js","698:static/chunks/698-cda562f453ec6025.js"],"name":"default","async":false}
 6:I{"id":2306,"chunks":["272:static/chunks/webpack-5c112b2219820177.js","253:static/chunks/bce60fc1-4b414db556b9a059.js","698:static/chunks/698-cda562f453ec6025.js"],"name":"default","async":false}

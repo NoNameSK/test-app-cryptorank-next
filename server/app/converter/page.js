@@ -617,41 +617,6 @@ const Converter = ()=>{
 
 /***/ }),
 
-/***/ 8533:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   r: () => (/* binding */ token)
-/* harmony export */ });
-const token = "95d392740f14dbe77294ae764928975d15b2ae7c9fe7df3d727817bffe58";
-
-
-/***/ }),
-
-/***/ 7344:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   w: () => (/* binding */ useFetcher)
-/* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(248);
-/* harmony import */ var swr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8149);
-
-
-const useFetcher = (url)=>{
-    const { data, error } = (0,swr__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .ZP)(url, (url)=>axios__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z.get(url).then((response)=>response.data));
-    return {
-        data,
-        isLoading: !error && !data,
-        isError: error
-    };
-};
-
-
-/***/ }),
-
 /***/ 8030:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -685,7 +650,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [697,777,709,489], () => (__webpack_exec__(9292)));
+var __webpack_exports__ = __webpack_require__.X(0, [697,777,709,798,610], () => (__webpack_exec__(9292)));
 module.exports = __webpack_exports__;
 
 })();
