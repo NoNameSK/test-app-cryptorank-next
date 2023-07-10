@@ -1,0 +1,40 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack-5c112b2219820177.js",
+      "static/chunks/bce60fc1-4b414db556b9a059.js",
+      "static/chunks/698-cda562f453ec6025.js",
+      "static/chunks/main-app-2f324c97938f109c.js",
+      "static/chunks/643-3021bcccaa59645f.js",
+      "static/chunks/app/page-03c66af913803372.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-5c112b2219820177.js",
+      "static/chunks/bce60fc1-4b414db556b9a059.js",
+      "static/chunks/698-cda562f453ec6025.js",
+      "static/chunks/main-app-2f324c97938f109c.js",
+      "static/chunks/643-3021bcccaa59645f.js",
+      "static/chunks/114-07aa280a34e3704f.js",
+      "static/css/e27f071dcd00fdfa.css",
+      "static/chunks/app/layout-da7671f87e64b6f3.js"
+    ],
+    "/converter/page": [
+      "static/chunks/webpack-5c112b2219820177.js",
+      "static/chunks/bce60fc1-4b414db556b9a059.js",
+      "static/chunks/698-cda562f453ec6025.js",
+      "static/chunks/main-app-2f324c97938f109c.js",
+      "static/chunks/643-3021bcccaa59645f.js",
+      "static/chunks/677-23b011b07f185ab4.js",
+      "static/chunks/app/converter/page-c36bfb18d4c93b74.js"
+    ],
+    "/cryptocurrencies/page": [
+      "static/chunks/webpack-5c112b2219820177.js",
+      "static/chunks/bce60fc1-4b414db556b9a059.js",
+      "static/chunks/698-cda562f453ec6025.js",
+      "static/chunks/main-app-2f324c97938f109c.js",
+      "static/chunks/643-3021bcccaa59645f.js",
+      "static/chunks/677-23b011b07f185ab4.js",
+      "static/chunks/app/cryptocurrencies/page-e640a661bd78d093.js"
+    ]
+  }
+}
