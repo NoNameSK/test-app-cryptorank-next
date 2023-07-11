@@ -1,29 +1,6 @@
-'use client'
-
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
-import styled from 'styled-components';
-
-const Navigation = styled.header`
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  margin-bottom: 32px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-`
-
-const LinkNavigation = styled(Link)`
- text-decoration: none;
-  font-size: 24px;
-  color: black;
-
-  &.active {
-    color: blue;
-  }
-`
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,12 +17,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navigation>
-            <LinkNavigation href="/converter">Converter</LinkNavigation>
-            <LinkNavigation href="/cryptocurrencies">Cryptocurrencies</LinkNavigation>
-        </Navigation>
+        <header style={{
+          display: 'flex',
+          gap: '20px',
+          justifyContent: 'center',
+          paddingTop: '32px',
+          paddingBottom: '32px',
+          marginBottom: '32px',
+          boxShadow: 'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px'
+        }}>
+          <Link href="/converter">Converter</Link>
+          <Link href="/cryptocurrencies">Cryptocurrencies</Link>
+        </header>
         {children}
-        </body>
+      </body>
     </html>
   )
 }
